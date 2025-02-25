@@ -1,0 +1,15 @@
+@mixin pc {
+    @media print, (min-width: 768px) {
+        @content;
+    }
+}
+@mixin sp {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin print {
+    @media print {
+        @content;
+    }
+}

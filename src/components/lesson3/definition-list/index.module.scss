@@ -1,21 +1,5 @@
 @import "@/styles/mixins";
 
-.contents {
-    padding: 15px;
-}
-
-.h1-title {
-    text-align: center;
-}
-
-.h2-title {
-    padding: 10px;
-    border-left: 5px solid #000;
-    background: #eee;
-    font-size: 1.2em;
-    margin-top: 2em;
-}
-
 .dl {
     @include pc {
         display: flex;
