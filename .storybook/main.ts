@@ -7,24 +7,34 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
+
   "addons": [
     {
       "name": "@storybook/addon-essentials",
       "options": {
-        "docs": false
+        "docs": true,
+        "controls": true,
+        "actions": true,
+        "backgrounds": true,
+        "toolbars": true,
+        "viewport": true
       }
     },
     "@storybook/addon-onboarding",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    "@storybook/addon-storysource"
   ],
+
   "framework": {
     "name": "@storybook/nextjs",
     "options": {}
   },
+
   "staticDirs": [
     "..\\public"
   ],
+
   webpackFinal: async (config: Configuration) => {
     if (config.resolve) {
         config.resolve.alias = {
@@ -34,5 +44,14 @@ const config: StorybookConfig = {
     }
     return config;
   },
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
+  
 };
 export default config;
