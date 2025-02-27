@@ -1,0 +1,28 @@
+.wrapper {
+    border: 1px solid #ccc;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    &::after {
+        content: ' +';
+    }
+}
+.contents {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+}
+
+.open {
+    .btn::after {
+        content: ' -';
+    }
+    .contents {
+        display: block;
+    }
+}

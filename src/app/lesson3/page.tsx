@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageTitle, SectionTitle, Text, DefinitionList, List, Contents } from "@/components/lesson3";
+import { PageTitle, SectionTitle, Text, DefinitionList, List, Contents, Counter, Toggle } from "@/components/lesson3";
 
 export const metadata: Metadata = {
     title: "Lesson3 コンポーネントの作成と管理",
@@ -39,6 +39,10 @@ export default function Page() {
             <Image src="/dummy.png" width={150} height={150} alt="" priority />
             <SectionTitle>リンクの練習</SectionTitle>
             <Link href="/">トップページ</Link>
+            <SectionTitle>カウンター</SectionTitle>
+            <Counter />
+            <SectionTitle>トグル</SectionTitle>
+            <Toggle title="トグルボタン" opened>コンテンツ</Toggle>
         </Contents>
     );
 }
