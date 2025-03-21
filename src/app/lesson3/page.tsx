@@ -2,22 +2,34 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageTitle, SectionTitle, Text, DefinitionList, List, Contents, Counter, Toggle } from "@/components/lesson3";
+import {getProfile} from '@/fetch/lesson3/get-profile'
 
 export const metadata: Metadata = {
     title: "Lesson3 コンポーネントの作成と管理",
     description: "Lesson3 コンポーネントの作成と管理",
 };
 
-export default function Page() {
-    const fullName: string = "澤田結子";
-    const hometown: string = "神奈川県";
-    const age: number | null = 26;
-    const hobbiesSkills: { hobbies: string; skills: string } = {
-        hobbies: "ゲーム、バスケ観戦",
-        skills: "ボールを指で回す",
-    };
-    const favoriteFoods: string[] = ["寿司", "カレー", "焼肉"];
-    const favoriteManga: string[] = ["スラムダンク", "ワンピース", "コナン"];
+export default async function Page() {
+    
+    const {
+        fullName,
+        hometown,
+        age,
+        hobbiesSkills,
+        favoriteFoods,
+        favoriteManga
+    } = await getProfile();
+    // 下記のデータは上記の書き方でインポートする形に変更
+    // const fullName: string = "澤田結子";
+    // const hometown: string = "神奈川県";
+    // const age: number | null = 26;
+    // const hobbiesSkills: { hobbies: string; skills: string } = {
+    //     hobbies: "ゲーム、バスケ観戦",
+    //     skills: "ボールを指で回す",
+    // };
+    // const favoriteFoods: string[] = ["寿司", "カレー", "焼肉"];
+    // const favoriteManga: string[] = ["スラムダンク", "ワンピース", "コナン"];
+
     return (
         <Contents>
             <PageTitle>自己紹介</PageTitle>
