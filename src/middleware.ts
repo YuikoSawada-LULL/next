@@ -14,7 +14,7 @@ export function middleware(req: NextRequest) {
     }
 
     try {
-        console.log(basicAuth);
+        // console.log(basicAuth);
         const authValue = basicAuth.split(" ")[1]; //split():文字列を配列に変換する
         const [user, pwd] = atob(authValue).split(":");
 

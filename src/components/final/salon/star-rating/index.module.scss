@@ -1,0 +1,30 @@
+.rating-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rating-stars input {
+  display: none;
+}
+
+.rating-stars label {
+  cursor: pointer;
+  width: 30px;
+  font-size: 30px;
+  color: #ddd;
+}
+
+.rating-stars label:before {
+  content: '★';
+}
+
+.rating-stars input:checked ~ label {
+  color: #ffdd00;
+}
+
+.rating-stars:not(:checked) label:hover,
+.rating-stars:not(:checked) label:hover ~ label {
+  color: #ffdd00;
+}
+  

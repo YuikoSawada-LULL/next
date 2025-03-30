@@ -5,6 +5,6 @@ type PageProps = {
 };
 
 export default function Page({ params }: PageProps) {
-    console.log(params);
+    // console.log(params);
     return <div>{params.category}ページ</div>;
 }

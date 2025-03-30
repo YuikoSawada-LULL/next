@@ -32,7 +32,7 @@ export const LoginForm: React.FC = () => {
         }
         // サブミット後の処理を記載
         setServerError(false);
-        console.log(data);
+        // console.log(data);
     };
     return (
         <>
